@@ -1,7 +1,9 @@
 # Laporan Progres Pekan [09]
 
 Kelompok      : 3
+
 Proses bisnis : Pembelian
+
 Status        : Hijau
 
 ## 1. Target dan capaian
