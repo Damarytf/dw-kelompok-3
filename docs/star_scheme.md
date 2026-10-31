@@ -1,3 +1,8 @@
+# ERD Data Warehouse Purchasing
+
+Diagram star schema untuk proses pembelian (purchasing), dengan `fact_purchasing` sebagai tabel fakta dan empat tabel dimensi.
+
+```mermaid
 erDiagram
     fact_purchasing {
         BIGINT purchase_fact_id PK
@@ -53,3 +58,11 @@ erDiagram
     fact_purchasing }|--|| dim_vendor : "Dipesan Dari"
     fact_purchasing }|--|| dim_product : "Membeli Produk"
     fact_purchasing }|--|| dim_employee : "Diproses Oleh"
+```
+
+## Keterangan
+
+- **PK**: Primary Key (surrogate key)
+- **FK**: Foreign Key ke tabel dimensi
+- **NK**: Natural Key dari sistem sumber
+- **Measure**: kolom ukuran (nilai numerik) pada tabel fakta
