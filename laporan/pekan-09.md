@@ -4,7 +4,7 @@ Kelompok      : 3
 
 Proses bisnis : Pembelian
 
-Status        : Hijau
+Status        : Hijau, Kuning, Merah
 
 ## 1. Target dan capaian
 
