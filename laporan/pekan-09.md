@@ -17,7 +17,7 @@ Status        : Hijau, Kuning, Merah
 | Profil data sumber | Hijau | Analisis tabel operasional `Purchasing.*` dan `Production.Product` |
 | Rancang star schema versi 1 | Hijau | Skrip DDL SQL `FactPurchase` & tabel dimensi serta desain ERD Draw.io |
 | Isi baris bus matrix tim kalian | Kuning | [Bus Matrix](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/bus_matrix_pembelian.md) |
-| Daftar risiko awal | Belum | - |
+| Daftar risiko awal | Hijau | [Daftar Risiko Awal](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/Daftar%20Risiko%20Awal%20dan%20Penanganan.md) |
 | Tulis laporan pekan 09 | Hijau | Penyusunan laporan progres pekan 09 |
 
 ## 2. Kendala pengerjaan
