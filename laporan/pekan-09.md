@@ -51,7 +51,7 @@ Masalah teknis apa yang muncul? Apa yang sudah dicoba?
 
 | Nama | Peran | Yang dikerjakan pekan ini | Bukti commit |
 |---|---|---|---|
-| Damar Randu Y.T.F | Project Manager | Menjaga target mingguan, menyusun laporan progres pekan 09, dan memimpin koordinasi tim. | https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/project_charter.md |
+| Damar Randu Y.T.F | Project Manager | Menjaga target mingguan, menyusun laporan progres pekan 09, dan memimpin koordinasi tim. | [Laporan Pekan 9](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/project_charter.md) |
 | Arya Kusuma Negara | Data Modeler | Merancang *Star Schema* v1, menyusun Kamus Data (*Data Dictionary*), dan membuat skrip DDL SQL (`FactPurchase` serta tabel dimensi). | [Commit / Link Repository] |
 | Muhammad Zuna | ETL Developer | Melakukan penelusuran & profil data sumber pada skema `Purchasing` dan `Production` untuk alur ekstraksi. | [Commit / Link Repository] |
 | Muhammad Irsyadul Ibad | OLAP & Dashboard Developer | Menganalisis kebutuhan dimensi dan fakta untuk perancangan kueri OLAP dan antarmuka *dashboard*. | [Commit / Link Repository] |
