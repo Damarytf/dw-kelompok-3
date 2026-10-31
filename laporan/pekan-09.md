@@ -14,7 +14,7 @@ Status        : Hijau, Kuning, Merah
 | Siapkan database sumber | Hijau |[images/Database Sumber](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/Database%20Sumber.png) |
 | Pilih proses bisnis | Hijau | Proses bisnis Pembelian (*Purchasing*) |
 | Tulis minimal 5 pertanyaan bisnis | Hijau | [Dokumen perencanaan 5 pertanyaan bisnis terukur](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/5%20Pertanyaan%20Bisnis_Pembelian_Adventureworks.md) |
-| Profil data sumber | Hijau | [Profil Data Sumber](https://github.com/Damarytf/dw-kelompok-3/tree/main/etl/Sumber%20profil), [Jumlah pesanan pembelian dan rentang tanggal transaksinya]() ,[Pengecekan Null]() ,[berapa pesanan yang tidak punya employee]() ,[jumlah baris detail sebagai calon jumlah baris fakta]()|
+| Profil data sumber | Hijau | [Profil Data Sumber](https://github.com/Damarytf/dw-kelompok-3/tree/main/etl/Sumber%20profil), [Jumlah pesanan pembelian dan rentang tanggal transaksinya](), [Pengecekan Null](), [berapa pesanan yang tidak punya employee](), [jumlah baris detail sebagai calon jumlah baris fakta]()|
 | Rancang star schema versi 1 | Hijau | Skrip DDL SQL `FactPurchase` & tabel dimensi serta desain ERD Draw.io |
 | Isi baris bus matrix tim kalian | Kuning | [Bus Matrix](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/bus_matrix_pembelian.md) |
 | Daftar risiko awal | Hijau | [Daftar Risiko Awal](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/Daftar%20Risiko%20Awal%20dan%20Penanganan.md) |
