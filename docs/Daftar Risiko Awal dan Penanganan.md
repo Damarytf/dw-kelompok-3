@@ -1,6 +1,6 @@
 # Daftar Risiko Awal dan Penanganan (Initial Risk Register)
 
-### Proyek Analitik Bisnis: Pembelian (Purchasing) - AdventureWorks
+### Proses Bisnis: Pembelian (Purchasing) - AdventureWorks
 
 Berikut adalah daftar risiko awal beserta tingkat risiko dan rencana mitigasi/penanganannya untuk proyek data/analytics pada skema pembelian:
 
