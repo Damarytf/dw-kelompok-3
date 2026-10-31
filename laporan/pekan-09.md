@@ -11,7 +11,7 @@ Status        : Hijau, Kuning, Merah
 | Target pekan ini | Status | Bukti (tautan file, commit, tangkapan layar) |
 |---|---|---|
 | Bentuk tim dan tetapkan peran | Hijau | [Nama Anggota tim dan peran](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/project_charter.md) |
-| Siapkan database sumber | Hijau | Konfigurasi database `adventureworks` lokal ([images/Database Sumber](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/Database%20Sumber.png)) |
+| Siapkan database sumber | Hijau |([images/Database Sumber](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/Database%20Sumber.png)) |
 | Pilih proses bisnis | Hijau | Proses bisnis Pembelian (*Purchasing*) |
 | Tulis minimal 5 pertanyaan bisnis | Hijau | [Dokumen perencanaan 5 pertanyaan bisnis terukur](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/5%20Pertanyaan%20Bisnis_Pembelian_Adventureworks.md) |
 | Profil data sumber | Hijau | Analisis tabel operasional `Purchasing.*` dan `Production.Product` |
