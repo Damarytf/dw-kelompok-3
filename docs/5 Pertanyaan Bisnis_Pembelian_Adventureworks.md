@@ -1,8 +1,8 @@
-# Perencanaan Pertanyaan Bisnis - Proses Pembelian (Purchasing)
+# Pertanyaan Bisnis - Proses Pembelian (Purchasing)
 
 ### Database: AdventureWorks
 
-Berikut adalah tabel perencanaan 5 pertanyaan bisnis terukur beserta fakta dan dimensi terkait proses bisnis Pembelian:
+Berikut adalah tabel 5 pertanyaan bisnis terukur beserta fakta dan dimensi terkait proses bisnis Pembelian:
 
 |Pertanyaan bisnis|Fakta (ukuran)|Dimensi (sudut pandang)|
 |-|-|-|
