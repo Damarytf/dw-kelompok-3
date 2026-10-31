@@ -35,9 +35,7 @@ Pembagian kerja, komunikasi, anggota yang sulit dihubungi, dan sebagainya.
 
 ## 4. Keputusan yang butuh persetujuan sponsor
 
-Contoh: mengubah grain, menambah dimensi, mempersempit rentang data.
 
-* Penetapan tingkat granularitas (*grain*) pada tabel fakta `FactPurchase` di tingkat baris item pesanan (*Purchase Order Detail*) untuk mendukung analisis metrik *rejection rate* dan proporsi *freight*.
 
 ## 5. Rencana pekan depan
 
