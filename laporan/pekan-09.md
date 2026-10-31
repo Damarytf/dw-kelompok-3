@@ -29,8 +29,6 @@ Masalah teknis apa yang muncul? Apa yang sudah dicoba?
 
 ## 3. Kendala tim
 
-Pembagian kerja, komunikasi, anggota yang sulit dihubungi, dan sebagainya.
-
 * Tidak ada kendala berarti dalam komunikasi maupun pembagian kerja tim; seluruh anggota berkoordinasi dengan baik sesuai peran masing-masing.
 
 ## 4. Keputusan yang butuh persetujuan sponsor
