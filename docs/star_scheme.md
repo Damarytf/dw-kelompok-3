@@ -2,6 +2,10 @@
 
 Diagram star schema untuk proses pembelian (purchasing), dengan `fact_purchasing` sebagai tabel fakta dan empat tabel dimensi.
 
+## Grain
+
+**Satu baris pada `fact_purchasing` merepresentasikan satu item produk (detail baris) dalam satu purchase order, yaitu satu kombinasi `purchase_order_id` dan `purchase_order_detail_id`.**
+
 ```mermaid
 erDiagram
     fact_purchasing {
