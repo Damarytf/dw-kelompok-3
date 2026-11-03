@@ -58,15 +58,15 @@ erDiagram
         VARCHAR month_name
     }
 
-    fact_purchasing }|--|| dim_date : "Memiliki Tanggal Order"
-    fact_purchasing }|--|| dim_vendor : "Dipesan Dari"
-    fact_purchasing }|--|| dim_product : "Membeli Produk"
-    fact_purchasing }|--|| dim_employee : "Diproses Oleh"
+    dim_date ||--|{ fact_purchasing : "Memiliki Tanggal Order"
+    dim_vendor ||--|{ fact_purchasing : "Dipesan Dari"
+    dim_product ||--|{ fact_purchasing : "Membeli Produk"
+    dim_employee ||--|{ fact_purchasing : "Diproses Oleh"
 ```
 
 ## Keterangan
 
-* **PK**: Primary Key (surrogate key)
-* **FK**: Foreign Key ke tabel dimensi
-* **NK**: Natural Key dari sistem sumber
-* **Measure**: kolom ukuran (nilai numerik) pada tabel fakta
+• **PK**: Primary Key (surrogate key)
+• **FK**: Foreign Key ke tabel dimensi
+• **NK**: Natural Key dari sistem sumber
+• **Measure**: kolom ukuran (nilai numerik) pada tabel fakta
