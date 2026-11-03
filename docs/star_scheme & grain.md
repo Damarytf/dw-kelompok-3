@@ -58,12 +58,12 @@ erDiagram
         VARCHAR month_name
     }
 
-    dim_date }|--||  fact_purchasing : "Memiliki Tanggal Order"
-    dim_vendor }|--|| fact_purchasing : "Dipesan Dari"
-    dim_product }|--||  fact_purchasing : "Membeli Produk"
-    dim_employee }|--||  fact_purchasing : "Diproses Oleh"
-```
+    dim_date ||--|{ fact_purchasing : "Memiliki Tanggal Order"
+    dim_vendor ||--|{ fact_purchasing : "Dipesan Dari"
+    dim_product ||--|{ fact_purchasing : "Membeli Produk"
+    dim_employee ||--|{ fact_purchasing : "Diproses Oleh"
 
+    
 ## Keterangan
 
 * **PK**: Primary Key (surrogate key)
