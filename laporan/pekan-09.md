@@ -22,13 +22,10 @@ Status        : Hijau, Kuning, Merah
 
 ## 2. Kendala pengerjaan
 
-Masalah teknis apa yang muncul? Apa yang sudah dicoba?
-
-* **Masalah Teknis:** Penyesuaian struktur skrip DDL SQL untuk pembuatan tabel Data Warehouse (*Fact* & *Dimension*) serta penyusunan visualisasi *Star Schema* agar dapat diimpor ke Draw.io.
-* **Solusi yang Dicoba:** Memanfaatkan fitur *Advanced SQL Import* di Draw.io untuk menggenerasi skema relasi secara otomatis berdasarkan skrip DDL SQL.
-
-* **Masalah Teknis:** Jumlah Size Data Adventureworks yang melebihi minimal size (40mb)
-* **Solusi yang Dicoba:** Mengubah Ukuran Minimal Size dari 40mb ke 1000mb
+| No. | Masalah Teknis | Solusi yang Dicoba |
+| :---: | :--- | :--- |
+| 1 | Penyesuaian struktur skrip DDL SQL untuk pembuatan tabel Data Warehouse (*Fact* & *Dimension*) serta penyusunan visualisasi *Star Schema* agar dapat diimpor ke Draw.io. | Memanfaatkan fitur *Advanced SQL Import* di Draw.io untuk menggenerasi skema relasi secara otomatis berdasarkan skrip DDL SQL. |
+| 2 | Jumlah *size* data AdventureWorks yang melebihi batas minimal (*size* > 40 MB). | Mengubah ukuran minimal *size* dari 40 MB ke 1000 MB. |
 
 ## 3. Kendala tim
 
