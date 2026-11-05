@@ -99,12 +99,12 @@ erDiagram
         INT fiscal_year
     }
 
-    fact_purchasing }|--|| dim_date : "Memiliki Tanggal (Order/Due/Ship)"
-    fact_purchasing }|--|| dim_vendor : "Dipesan Dari (Who)"
-    fact_purchasing }|--|| dim_product : "Membeli Produk (What)"
-    fact_purchasing }|--|| dim_employee : "Diproses Oleh (Who)"
-    fact_purchasing }|--|| dim_ship_method : "Dikirim Melalui (How)"
-    fact_purchasing }|--|| dim_geography : "Lokasi Vendor (Where)"
+    fact_purchasing }|--|| dim_date : "Memiliki Tanggal"
+    fact_purchasing }|--|| dim_vendor : "Dipesan Dari"
+    fact_purchasing }|--|| dim_product : "Membeli Produk"
+    fact_purchasing }|--|| dim_employee : "Diproses Oleh"
+    fact_purchasing }|--|| dim_ship_method : "Dikirim Melalui"
+    fact_purchasing }|--|| dim_geography : "Lokasi Vendor"
 ```
 
 ## Keterangan
