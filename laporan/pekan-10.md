@@ -10,7 +10,7 @@ Status        : Hijau, Kuning, Merah
 
 | Target pekan ini | Status | Bukti (tautan file, commit, tangkapan layar) |
 |---|---|---|
-| Star schema versi 2 sesuai catatan sponsor | Hijau | [Star Schema Ver 2]([https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/project_charter.md](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/star_scheme_v2.png) |
+| Star schema versi 2 sesuai catatan sponsor | Hijau |[Gambar Star schema Ver 2](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/star_scheme_v2.png) |
 | Star schema memakai dim_tanggal standar, dim_produk mengikuti struktur standar | Hijau |[images/Database Sumber](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/Database%20Sumber.png) |
 | Mapping lengkap untuk semua kolom dimensi dan fakta | Hijau | Proses bisnis Pembelian (*Purchasing*) |
 | Strategi SCD tertulis, minimal satu dimensi tipe 2 | Hijau | [Strategi SCD]([https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/5%20Pertanyaan%20Bisnis_Pembelian_Adventureworks.md](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/strategi_scd.md)) |
