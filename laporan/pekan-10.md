@@ -39,13 +39,13 @@ Status        : Hijau, Kuning, Merah
 
 | Target | Penanggung jawab |
 |---|---|
-| Memasang `dim_tanggal` standar (Versi 1.0) dan menyimpan hasil *query* pemeriksaannya | Arya Kusuma Negara |
+| Memasang `dim_tanggal` standar (Versi 1.0) dan menyimpan hasil *query* pemeriksaannya | - |
 | Menyusun file `sql/ddl.sql` untuk seluruh tabel dimensi dan fakta tim (termasuk baris `-1`, *foreign key*, dan *index*) yang dapat dijalankan berulang tanpa *error* | Arya Kusuma Negara |
-| Melakukan uji *constraint* (3 pengujian di tab Uji Constraint) dan mengabadikan tangkapan layar pesan *error* | Arya Kusuma Negara |
-| Menyusun Kamus Data lengkap di `docs/kamus-data.md` (seluruh tabel DW, penjelasan `dim_tanggal`, dan versi skrip yang digunakan) | Dinar Sekar |
+| Melakukan uji *constraint* (3 pengujian di tab Uji Constraint) dan mengabadikan tangkapan layar pesan *error* | - |
+| Menyusun Kamus Data lengkap di `docs/kamus-data.md` (seluruh tabel DW, penjelasan `dim_tanggal`, dan versi skrip yang digunakan) | - |
 | Menautkan daftar tabel *staging* ke dalam dokumen *mapping* (STTM) | Muhammad Zuna |
-| Membuat ERD melalui *reverse engineering* dari database DW (menggunakan DBeaver/sejenis) serta memvalidasi kesesuaiannya dengan *Star Schema v2* | Arya Kusuma Negara |
-| Menyusun Laporan Pekan 12 menggunakan templat laporan progres (termasuk permintaan perubahan jika ada) untuk *Steering Review* pekan 12 | Damar Randu Y.T.F |
+| Membuat ERD melalui *reverse engineering* dari database DW (menggunakan DBeaver/sejenis) serta memvalidasi kesesuaiannya dengan *Star Schema v2* | - |
+| Menyusun Laporan Pekan 12 menggunakan templat laporan progres (termasuk permintaan perubahan jika ada) untuk *Steering Review* pekan 12 |- |
 
 
 ## 6. Kontribusi anggota
