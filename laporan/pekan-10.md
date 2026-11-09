@@ -15,8 +15,8 @@ Status        : Hijau, Kuning, Merah
 | Mapping lengkap untuk semua kolom dimensi dan fakta | Hijau | [Mapping](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/mapping.md) |
 | Strategi SCD tertulis, minimal satu dimensi tipe 2 | Hijau | [Strategi SCD](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/strategi_scd.md) |
 |Urutan load tertulis | Hijau | [Load Sequence](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/load_sequence.md) |
-| Tabel desain cube dengan minimal satu calculated member | Hijau | Skrip DDL SQL `FactPurchase` & tabel dimensi serta desain ERD Draw.io |
-| Wireframe dashboard, semua pertanyaan bisnis terwakili | Kuning | [Bus Matrix](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/bus_matrix_pembelian.md) |
+| Tabel desain cube dengan minimal satu calculated member | Hijau | Belum |
+| Wireframe dashboard, semua pertanyaan bisnis terwakili | Kuning | Belum |
 | Tangkapan layar Pentaho terhubung ke database sumber | Hijau | [Gambar 1.  Konfigurasi dan Pengujian Preview Data pada Step Table Input (Extract Vendor)](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/Gambar%201.%20Konfigurasi%20dan%20Pengujian%20Preview%20Data%20pada%20Step%20Table%20Input%20(Extract%20Vendor).jpeg), [Gambar 2. Hasil Eksekusi (Run Execution Success) Transformation Extract Vendor Domain Purchasing)](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/Gambar%202.%20Hasil%20Eksekusi%20(Run%20Execution%20Success)%20Transformation%20Extract%20Vendor%20Domain%20Purchasing.jpeg) |
 | Laporan laporan/pekan-11.md siap | Hijau | - |
 
