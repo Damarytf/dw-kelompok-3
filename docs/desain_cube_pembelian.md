@@ -2,7 +2,7 @@
 
 ### Berdasarkan Star Schema `fact_purchasing`
 
-Berikut adalah rancangan desain cube multidimensi yang dipetakan langsung dari skema bintang tabel fakta pembelian beserta tabel-tabel dimensinya:
+Berikut adalah rancangan desain cube multidimensi yang dipetakan langsung dari star schema tabel fakta pembelian beserta tabel-tabel dimensinya:
 
 | Elemen | Desain Hierarki / Metrik | Tabel Asal & Foreign Key (FK) |
 | :--- | :--- | :--- |
