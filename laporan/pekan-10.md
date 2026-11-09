@@ -104,6 +104,19 @@ Berdasarkan diagram star schema pada proses bisnis pembelian (fact_purchasing), 
 | `TaxAmt` | DECIMAL(18,2) | Metric / Measure | `Sales.SalesOrderHeader` | `TaxAmt * (LineTotal / SubTotal)` | Biaya pajak dihitung proporsional per baris detail. |
 | `Freight` | DECIMAL(18,2) | Metric / Measure | `Sales.SalesOrderHeader` | `Freight * (LineTotal / SubTotal)` | Biaya pengiriman dihitung proporsional per baris detail. |
 
+## Urutan Load ETL (Load Order)
+
+1. **Memuat Seluruh Tabel Dimensi Terlebih Dahulu (Parallel / Independent Load)**
+   Sebelum tabel fakta dapat diisi, semua tabel dimensi harus sudah terisi terlebih dahulu agar nilai *Surrogate Key* (SK) dapat dicari (*lookup*). Urutan pengisian tabel dimensi bisa dilakukan secara bersamaan (paralel) karena tidak saling bergantung satu sama lain:
+   - `dim_tanggal` (Dapat di-*generate* langsung menggunakan CTE rekursif tanpa bergantung pada tabel OLTP).
+   - `DimCustomer` (Mengambil data dari `Sales.Customer`, `Person.Person`, dll).
+   - `DimProduct` (Mengambil data dari `Production.Product`, `ProductSubcategory`, dan `ProductCategory`).
+   - `DimTerritory` (Mengambil data dari `Sales.SalesTerritory` dan `Person.CountryRegion`).
+
+2. **Memuat Tabel Fakta (`FactSales`)**
+   - `FactSales` (Dilakukan paling akhir setelah seluruh tabel dimensi di Langkah 1 selesai terisi).
+   - **Alasan:** Tabel fakta membutuhkan proses *lookup* ke kolom `CustomerSK`, `ProductSK`, `TerritorySK`, dan `tanggal_key` yang bersumber dari tabel-tabel dimensi di atas.
+
 
 ## 4. Strategi SCD tertulis, minimal satu dimensi tipe 2
 
