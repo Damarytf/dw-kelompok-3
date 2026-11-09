@@ -17,7 +17,7 @@ Berdasarkan diagram star schema pada proses bisnis pembelian (fact_purchasing), 
 
 * Tidak ada kendala berarti dalam komunikasi maupun pembagian kerja tim; seluruh anggota berkoordinasi dengan baik sesuai peran masing-masing.
 
-## 4. Keputusan yang butuh persetujuan sponsor
+## 4. Strategi SCD tertulis, minimal satu dimensi tipe 2
 
 
 
