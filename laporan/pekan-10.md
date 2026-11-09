@@ -6,7 +6,7 @@ Proses bisnis : Pembelian
 
 ## 1.Star schema versi 2 sesuai catatan sponsor
 
-[Gambar Star schema Ver 2]([https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/star_scheme%20%26%20grain.md](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/star_scheme_v2.png)
+[Gambar Star schema Ver 2](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/star_scheme%20%26%20grain.md](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/star_scheme_v2.png)
 
 ## 2. Kendala pengerjaan
 
