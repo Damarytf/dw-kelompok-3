@@ -1,4 +1,4 @@
-# Dokumen Desain Cube - Proses Pembelian (Purchasing)
+# Desain Cube OLAP - Proses Pembelian (Purchasing)
 
 ### Berdasarkan Star Schema `fact_purchasing`
 
