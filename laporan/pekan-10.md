@@ -120,10 +120,6 @@ Berdasarkan diagram star schema pada proses bisnis pembelian (fact_purchasing), 
 
 ## 4. Strategi SCD tertulis
 
-# Strategi Slowly Changing Dimension (SCD) - Skema Purchasing
-
-Dokumen ini memuat penentuan strategi SCD untuk tiap tabel dimensi pada skema *Purchasing*, beserta tipe yang digunakan untuk kolom-kolom penting dan alasannya.
-
 ## 1. `dim_product` (Kombinasi SCD Type 1 & Type 2)
 *   **SCD Type 2 (History Retained):** `standard_cost`, `list_price`, `subcategory_name`.
     *   *Alasan:* Ini adalah dimensi paling krusial untuk memakai Type 2. Perubahan harga (`standard_cost` dan `list_price`) wajib dilacak historinya. Jika vendor menaikkan harga material tahun ini, kita tidak boleh menimpa data harga tahun lalu agar perhitungan `line_total` dan metrik pengeluaran masa lalu tidak berubah dan tetap akurat.
