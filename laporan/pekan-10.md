@@ -39,10 +39,14 @@ Status        : Hijau, Kuning, Merah
 
 | Target | Penanggung jawab |
 |---|---|
-| Eksekusi dan validasi skrip DDL Star Schema di database Data Warehouse | Arya Kusuma Negara |
-| Menyusun skrip ETL (*Extract, Transform, Load*) untuk pengisian data *Fact* & *Dimension* | Muhammad Zuna |
-| Finalisasi visualisasi diagram ERD Star Schema di Draw.io | Arya Kusuma Negara |
-| Melengkapi matriks bus (*Bus Matrix*) dan daftar risiko awal | Seluruh Anggota Tim |
+| Memasang `dim_tanggal` standar (Versi 1.0) dan menyimpan hasil *query* pemeriksaannya | Arya Kusuma Negara |
+| Menyusun file `sql/ddl.sql` untuk seluruh tabel dimensi dan fakta tim (termasuk baris `-1`, *foreign key*, dan *index*) yang dapat dijalankan berulang tanpa *error* | Arya Kusuma Negara |
+| Melakukan uji *constraint* (3 pengujian di tab Uji Constraint) dan mengabadikan tangkapan layar pesan *error* | Arya Kusuma Negara |
+| Menyusun Kamus Data lengkap di `docs/kamus-data.md` (seluruh tabel DW, penjelasan `dim_tanggal`, dan versi skrip yang digunakan) | Dinar Sekar |
+| Menautkan daftar tabel *staging* ke dalam dokumen *mapping* (STTM) | Muhammad Zuna |
+| Membuat ERD melalui *reverse engineering* dari database DW (menggunakan DBeaver/sejenis) serta memvalidasi kesesuaiannya dengan *Star Schema v2* | Arya Kusuma Negara |
+| Menyusun Laporan Pekan 12 menggunakan templat laporan progres (termasuk permintaan perubahan jika ada) untuk *Steering Review* pekan 12 | Damar Randu Y.T.F |
+
 
 ## 6. Kontribusi anggota
 
