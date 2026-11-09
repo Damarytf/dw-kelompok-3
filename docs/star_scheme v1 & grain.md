@@ -9,14 +9,14 @@ Diagram star schema untuk proses pembelian (purchasing), dengan `fact_purchasing
 ```mermaid
 erDiagram
     fact_purchasing {
-        INT purchase_fact_id PK
+        BIGINT purchase_fact_id PK
         INT purchase_order_id "NK: Header ID"
         INT purchase_order_detail_id "NK: Detail ID"
-        INT order_date_key FK "Ke dim_tanggal"
-        INT due_date_key FK "Ke dim_tanggal"
-        INT ship_date_key FK "Ke dim_tanggal"
+        INT order_date_key FK
+        INT due_date_key FK
+        INT ship_date_key FK
         INT vendor_key FK
-        INT produk_key FK "Revisi penamaan"
+        INT product_key FK
         INT employee_key FK
         INT ship_method_key FK
         INT geography_key FK
@@ -28,21 +28,20 @@ erDiagram
         DECIMAL line_total "Measure"
     }
 
-    dim_tanggal {
-        INT id_tanggal PK
-        DATE tanggal
-        INT hari
-        VARCHAR nama_hari
-        INT bulan
-        VARCHAR nama_bulan
-        INT kuartal
-        INT tahun
-        BOOLEAN is_weekend
+    dim_vendor {
+        INT vendor_key PK
+        INT vendor_id "NK: BusinessEntityID"
+        VARCHAR vendor_name
+        VARCHAR account_number
+        INT credit_rating
+        BOOLEAN preferred_vendor_status
+        BOOLEAN active_flag
+        VARCHAR purchasing_web_service_url
     }
 
-    dim_produk {
-        INT produk_key PK
-        INT product_id "NK"
+    dim_product {
+        INT product_key PK
+        INT product_id "NK: ProductID"
         VARCHAR product_name
         VARCHAR product_number
         VARCHAR color
@@ -53,59 +52,56 @@ erDiagram
         INT safety_stock_level
         VARCHAR category_name
         VARCHAR subcategory_name
-        DATE start_date "SCD2"
-        DATE end_date "SCD2"
-        BOOLEAN is_current_flag "SCD2"
-    }
-
-    dim_vendor {
-        INT vendor_key PK
-        INT vendor_id "NK"
-        VARCHAR vendor_name
-        VARCHAR account_number
-        INT credit_rating
-        BOOLEAN preferred_vendor_status
-        BOOLEAN active_flag
-        DATE start_date "SCD2"
-        DATE end_date "SCD2"
-        BOOLEAN is_current_flag "SCD2"
     }
 
     dim_employee {
         INT employee_key PK
-        INT employee_id "NK"
+        INT employee_id "NK: BusinessEntityID"
         VARCHAR employee_name
+        VARCHAR national_id_number
         VARCHAR job_title
         VARCHAR gender
+        VARCHAR marital_status
         DATE hire_date
-        DATE start_date "SCD2"
-        DATE end_date "SCD2"
-        BOOLEAN is_current_flag "SCD2"
+        INT vacation_hours
+        INT sick_leave_hours
     }
 
     dim_geography {
         INT geography_key PK
-        INT address_id "NK"
+        INT address_id "NK: AddressID"
         VARCHAR city
+        VARCHAR state_province_code
         VARCHAR state_province_name
+        VARCHAR country_region_code
         VARCHAR country_region_name
         VARCHAR postal_code
     }
 
     dim_ship_method {
         INT ship_method_key PK
-        INT ship_method_id "NK"
+        INT ship_method_id "NK: ShipMethodID"
         VARCHAR ship_method_name
         DECIMAL ship_base
         DECIMAL ship_rate
-        DATE start_date "SCD2"
-        DATE end_date "SCD2"
-        BOOLEAN is_current_flag "SCD2"
     }
 
-    fact_purchasing }|--|| dim_tanggal : "Order/Due/Ship Date"
+    dim_date {
+        INT date_key PK
+        DATE full_date
+        INT day_of_month
+        VARCHAR day_name
+        INT month_number
+        VARCHAR month_name
+        INT quarter
+        INT year
+        BOOLEAN is_weekend
+        INT fiscal_year
+    }
+
+    fact_purchasing }|--|| dim_date : "Memiliki Tanggal"
     fact_purchasing }|--|| dim_vendor : "Dipesan Dari"
-    fact_purchasing }|--|| dim_produk : "Membeli Produk"
+    fact_purchasing }|--|| dim_product : "Membeli Produk"
     fact_purchasing }|--|| dim_employee : "Diproses Oleh"
     fact_purchasing }|--|| dim_ship_method : "Dikirim Melalui"
     fact_purchasing }|--|| dim_geography : "Lokasi Vendor"
