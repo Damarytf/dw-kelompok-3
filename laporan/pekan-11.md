@@ -12,7 +12,7 @@ Status        : Hijau, Kuning, Merah
 |---|---|---|
 | Pemasangan dim_tanggal standar Versi 1.0 & penyimpanan hasil query pemeriksaan. | Hijau |[dim tanggal mysql](https://github.com/Damarytf/dw-kelompok-3/blob/main/sql/dim_tanggal_mysql.sql) |
 | Penulisan skrip sql/ddl.sql (seluruh dimensi & fakta, baris -1, foreign key, index, dan idempotent / aman dijalankan 2x). | Hijau |[Link Sql.ddl](https://github.com/Damarytf/dw-kelompok-3/blob/main/sql/ddl.sql) |
-| Pengujian constraint (menjalankan 3 uji & menyimpan tangkapan layar pesan error). | Hijau | [Link Menyusul] |
+| Pengujian constraint (menjalankan 3 uji & menyimpan tangkapan layar pesan error). | Hijau | [Uji Error fk](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/03_uji_error_fk.png), [Uji error check](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/04_uji_error_check.png), [Uji error pk](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/05_uji_error_pk.png) |
 | Pembuatan Kamus Data di docs/kamus-data.md (seluruh tabel DW, penjelasan dim_tanggal, dan versi skrip). | Hijau | [Link Menyusul] |
 |Pembuatan ERD reverse engineering dari database (via DBeaver) dan perbandingan dengan Star Schema v2. | Hijau | [Link Menyusul] |
 | Penambahan daftar tabel staging ke dalam dokumen mapping. | Hijau | [Link Mapping](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/mapping.md) |
