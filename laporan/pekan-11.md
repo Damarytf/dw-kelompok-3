@@ -15,7 +15,7 @@ Status        : Hijau, Kuning, Merah
 | Pengujian constraint (menjalankan 3 uji & menyimpan tangkapan layar pesan error). | Hijau | [Link Menyusul] |
 | Pembuatan Kamus Data di docs/kamus-data.md (seluruh tabel DW, penjelasan dim_tanggal, dan versi skrip). | Hijau | [Link Menyusul] |
 |Pembuatan ERD reverse engineering dari database (via DBeaver) dan perbandingan dengan Star Schema v2. | Hijau | [Link Menyusul] |
-| Penambahan daftar tabel staging ke dalam dokumen mapping. | Hijau | [Link Menyusul] |
+| Penambahan daftar tabel staging ke dalam dokumen mapping. | Hijau | [Link Mapping](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/mapping.md) |
 | Wireframe dashboard, semua pertanyaan bisnis terwakili | Kuning | [Link Menyusul] |
 | Penyusunan laporan progres menggunakan templat laporan serta penyertaan change request (jika ada). | Hijau | [Link Menyusul] |
 | Laporan laporan/pekan-11.md siap | Hijau | [Laporan Pekan 11)](https://github.com/Damarytf/dw-kelompok-3/blob/main/laporan/pekan-11.md) |
