@@ -10,7 +10,7 @@
 ## 1. Tabel Dimensi
 
 ### 1.1 `dim_tanggal` (Strategi: SCD Type 0)
-Dimensi kalender terpusat (skrip standar dosen V1.0) yang berperan sebagai *role-playing dimension* untuk mencatat tanggal pemesanan (`order_date_key`), batas waktu pengiriman (`due_date_key`), dan tanggal aktual pengiriman (`ship_date_key`). Menggunakan **SCD Type 0 (Retain Original)** karena atribut waktu bersifat tetap dan tidak akan pernah berubah.
+Dimensi kalender terpusat  yang berperan sebagai *role-playing dimension* untuk mencatat tanggal pemesanan (`order_date_key`), batas waktu pengiriman (`due_date_key`), dan tanggal aktual pengiriman (`ship_date_key`). Menggunakan **SCD Type 0 (Retain Original)** karena atribut waktu bersifat tetap dan tidak akan pernah berubah.
 
 | Nama Kolom | Tipe Data | Constraint | Strategi SCD | Sumber | Deskripsi |
 | :--- | :--- | :--- | :--- | :--- | :--- |
