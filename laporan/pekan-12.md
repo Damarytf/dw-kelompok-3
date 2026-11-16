@@ -43,3 +43,13 @@ Status        : Hijau, Kuning, Merah
 | Transformasi fakta & Database lookup ke setiap dimensi dengan nilai default -1 | Muhammad Zuna |
 | Proses rekonsiliasi & analisis hasil query rekonsiliasi setelah job dijalankan dua kali berturut-turut. | Ibad |
 | Menyusun Laporan Pekan 12 menggunakan templat laporan progres (termasuk permintaan perubahan jika ada) untuk *Steering Review* pekan 12 |Damar Randu Y.T.F. |
+
+## 6. Kontribusi anggota
+
+| Nama | Peran | Yang dikerjakan pekan ini | Bukti commit |
+|---|---|---|---|
+| Damar Randu Y.T.F | Project Manager | Mengoordinasikan penyelesaian seluruh target pekan 11 serta menyusun laporan progres dan rekapitulasi change request | [Laporan Pekan 11)](https://github.com/Damarytf/dw-kelompok-3/blob/main/laporan/pekan-11.md)  |
+| Arya Kusuma Negara | Data Modeler | Menjadi motor utama dalam perancangan skrip DDL (sql/ddl.sql), dokumentasi kamus data, pembuatan ERD via reverse engineering, serta pembaruan dokumen mapping staging | [Link Menyusul] |
+| Muhammad Zuna | ETL Developer | Bertanggung jawab mengeksekusi pemasangan dim_tanggal standar V1.0, memastikan skrip DDL dapat berjalan tanpa error saat diulang, serta melakukan uji constraint pada database | [Link Menyusul] |
+| Muhammad Irsyadul Ibad | OLAP Developer | Berperan sebagai peninjau silang (peer review) terhadap kesesuaian struktur ERD, kamus data, dan kesiapan arsitektur tabel fakta-dimensi sebelum dilanjutkan ke tahap ETL penuh pada pekan berikutnya. | [Link Menyusul] |
+| Ahmad Wildan Razaqi | Dashboard Developer | Membuat rancangan *wireframe* antarmuka dashboard, di mana setiap komponen visual diberi nomor referensi pertanyaan bisnis yang dijawabnya untuk memastikan seluruh pertanyaan bisnis terwakili dengan baik. | [Dasbboard beserta pertanyaan-pertanyaan refrensi](https://github.com/Damarytf/dw-kelompok-3/blob/main/dashboard/db.jpg) |
