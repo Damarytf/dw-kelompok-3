@@ -16,4 +16,4 @@ Status        : Hijau, Kuning, Merah
 |Pembuatan etl/job_utama.kjb (ekstrak, kosongkan, dimensi, fakta) & eksekusi via Kitchen dari terminal. | Hijau | [Link Menyusul] |
 | Proses rekonsiliasi & analisis hasil query rekonsiliasi setelah job dijalankan dua kali berturut-turut. | Hijau | [Link Menyusul] |
 |Penyusunan laporan Steering Review pekan 13, pengumpulan log Kitchen, dan hasil rekonsiliasi. | Kuning | [Link Menyusul] |
-| Laporan laporan/pekan-12.md siap | Hijau | [Laporan Pekan 11)](https://github.com/Damarytf/dw-kelompok-3/blob/main/laporan/pekan-11.md) |
+| Laporan laporan/pekan-12.md siap | Hijau | [Laporan Pekan 12)](https://github.com/Damarytf/dw-kelompok-3/blob/main/laporan/pekan-12.md) |
