@@ -7,17 +7,26 @@
 
 ---
 
-## 1. Penjelasan `dim_tanggal` (Dimensi Waktu)
+## 1. Tabel Dimensi
 
-Tabel `dim_tanggal` berfungsi sebagai dimensi kalender terpusat yang digunakan bersama oleh seluruh tim untuk menganalisis transaksi pembelian berdasarkan dimensi waktu (hari, bulan, kuartal, dan tahun). Pada domain *Purchasing*, tabel ini diterapkan sebagai *role-playing dimension* yang direlasikan ke tiga atribut tanggal berbeda di dalam tabel fakta, yaitu `order_date_key` (tanggal pesanan dibuat), `due_date_key` (batas waktu barang harus diterima), dan `ship_date_key` (tanggal aktual pengiriman barang).
+### 1.1 `dim_tanggal` (Strategi: SCD Type 0)
+Dimensi kalender terpusat (skrip standar dosen V1.0) yang berperan sebagai *role-playing dimension* untuk mencatat tanggal pemesanan (`order_date_key`), batas waktu pengiriman (`due_date_key`), dan tanggal aktual pengiriman (`ship_date_key`). Menggunakan **SCD Type 0 (Retain Original)** karena atribut waktu bersifat tetap dan tidak akan pernah berubah.
 
-Tabel ini menerapkan strategi **SCD Type 0 (Retain Original)** karena atribut tanggal pada kalender bersifat statis dan tidak akan pernah berubah. Selain rentang tanggal operasional, dimensi ini juga menggunakan baris penanda `-1` (*Unknown Member*) untuk menampung transaksi yang tanggalnya belum tersedia di sistem sumber (misalnya pesanan yang masih berstatus diproses sehingga belum memiliki tanggal kirim).
+| Nama Kolom | Tipe Data | Constraint | Strategi SCD | Sumber | Deskripsi |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `date_key` | `INT` | PK, Not Null | Surrogate Key | *Generated* (`YYYYMMDD`) | Kunci unik tanggal format numerik (`-1` untuk Unknown/belum dikirim). |
+| `tanggal` | `DATE` | Not Null, Unique | Type 0 | *Generated CTE* | Tanggal kalender lengkap (`YYYY-MM-DD`). |
+| `hari` | `INT` | Not Null | Type 0 | *Generated CTE* | Angka tanggal dalam satu bulan (`1`–`31`). |
+| `nama_hari` | `VARCHAR(15)` | Not Null | Type 0 | *Generated CTE* | Nama hari dalam seminggu (Senin–Minggu). |
+| `hari_dalam_minggu` | `INT` | Not Null | Type 0 | *Generated CTE* | Urutan hari dalam satu minggu (`1`–`7`). |
+| `minggu_ke` | `INT` | Not Null | Type 0 | *Generated CTE* | Urutan minggu dalam satu tahun (`1`–`53`). |
+| `bulan` | `INT` | Not Null | Type 0 | *Generated CTE* | Angka urutan bulan (`1`–`12`). |
+| `nama_bulan` | `VARCHAR(15)` | Not Null | Type 0 | *Generated CTE* | Nama lengkap bulan (Januari–Desember). |
+| `kuartal` | `INT` | Not Null | Type 0 | *Generated CTE* | Pembagian kuartal tahunan (`1`–`4`). |
+| `tahun` | `INT` | Not Null | Type 0 | *Generated CTE* | Tahun kalender empat digit (`YYYY`). |
+| `is_akhir_pekan` | `BOOLEAN` | Not Null | Type 0 | *Generated CTE* | Penanda akhir pekan (`TRUE` untuk Sabtu/Minggu, `FALSE` untuk hari kerja). |
 
----
-
-## 2. Tabel Dimensi
-
-### 2.1 `dim_produk` (Strategi: SCD Type 1 & Type 2)
+### 1.2 `dim_produk` (Strategi: SCD Type 1 & Type 2)
 Menyimpan master produk pengadaan. Menggunakan **SCD Type 2** pada atribut harga/biaya dan subkategori agar perubahan biaya standar tidak mengubah histori nilai belanja masa lalu.
 
 | Nama Kolom | Tipe Data | Constraint | Strategi SCD | Sumber (OLTP AdventureWorks) | Deskripsi |
@@ -38,7 +47,7 @@ Menyimpan master produk pengadaan. Menggunakan **SCD Type 2** pada atribut harga
 | `end_date` | `DATE` | Nullable | Metadata SCD2 | *System ETL Date* | Tanggal berakhirnya versi baris (`NULL` = aktif). |
 | `is_current_flag` | `BOOLEAN` | Not Null | Metadata SCD2 | *System ETL Flag* | Status baris aktif (`TRUE` = aktif, `FALSE` = historis). |
 
-### 2.2 `dim_vendor` (Strategi: SCD Type 1 & Type 2)
+### 1.3 `dim_vendor` (Strategi: SCD Type 1 & Type 2)
 Menyimpan data pemasok barang. Menggunakan **SCD Type 2** pada peringkat kredit dan status vendor prioritas untuk menganalisis korelasi kualitas pemasok terhadap barang retur (`rejected_qty`).
 
 | Nama Kolom | Tipe Data | Constraint | Strategi SCD | Sumber (OLTP AdventureWorks) | Deskripsi |
@@ -55,7 +64,7 @@ Menyimpan data pemasok barang. Menggunakan **SCD Type 2** pada peringkat kredit 
 | `end_date` | `DATE` | Nullable | Metadata SCD2 | *System ETL Date* | Tanggal berakhirnya versi data vendor. |
 | `is_current_flag` | `BOOLEAN` | Not Null | Metadata SCD2 | *System ETL Flag* | Status baris aktif (`TRUE` = aktif, `FALSE` = historis). |
 
-### 2.3 `dim_employee` (Strategi: SCD Type 1 & Type 2)
+### 1.4 `dim_employee` (Strategi: SCD Type 1 & Type 2)
 Menyimpan data staf internal yang memproses *Purchase Order*. Menggunakan **SCD Type 2** pada `job_title` agar riwayat kinerja staf tetap tercatat sesuai jabatan saat transaksi dilakukan.
 
 | Nama Kolom | Tipe Data | Constraint | Strategi SCD | Sumber (OLTP AdventureWorks) | Deskripsi |
@@ -74,7 +83,7 @@ Menyimpan data staf internal yang memproses *Purchase Order*. Menggunakan **SCD 
 | `end_date` | `DATE` | Nullable | Metadata SCD2 | *System ETL Date* | Tanggal berakhirnya versi data karyawan. |
 | `is_current_flag` | `BOOLEAN` | Not Null | Metadata SCD2 | *System ETL Flag* | Status baris aktif (`TRUE` = aktif, `FALSE` = historis). |
 
-### 2.4 `dim_ship_method` (Strategi: SCD Type 2)
+### 1.5 `dim_ship_method` (Strategi: SCD Type 2)
 Menyimpan metode ekspedisi pengiriman barang beserta riwayat tarif dasar dan tarif per unitnya.
 
 | Nama Kolom | Tipe Data | Constraint | Strategi SCD | Sumber (OLTP AdventureWorks) | Deskripsi |
@@ -88,7 +97,7 @@ Menyimpan metode ekspedisi pengiriman barang beserta riwayat tarif dasar dan tar
 | `end_date` | `DATE` | Nullable | Metadata SCD2 | *System ETL Date* | Tanggal berakhirnya tarif pengiriman. |
 | `is_current_flag` | `BOOLEAN` | Not Null | Metadata SCD2 | *System ETL Flag* | Status baris aktif (`TRUE` = aktif, `FALSE` = historis). |
 
-### 2.5 `dim_geography` (Strategi: SCD Type 1)
+### 1.6 `dim_geography` (Strategi: SCD Type 1)
 Menyimpan hierarki wilayah alamat pemasok. Menggunakan **SCD Type 1** karena koreksi administratif wilayah tidak memerlukan pelacakan versi.
 
 | Nama Kolom | Tipe Data | Constraint | Strategi SCD | Sumber (OLTP AdventureWorks) | Deskripsi |
@@ -104,9 +113,9 @@ Menyimpan hierarki wilayah alamat pemasok. Menggunakan **SCD Type 1** karena kor
 
 ---
 
-## 3. Tabel Fakta
+## 2. Tabel Fakta
 
-### 3.1 `fact_purchasing`
+### 2.1 `fact_purchasing`
 * **Grain:** Satu baris merepresentasikan satu rincian item produk dalam satu dokumen *Purchase Order*.
 
 | Nama Kolom | Tipe Data | Constraint | Jenis | Sumber (OLTP AdventureWorks) | Deskripsi |
