@@ -139,6 +139,7 @@ CREATE TABLE `fact_purchasing` (
   `total_tagihan_po` DECIMAL(19,4) DEFAULT 0.0000,
   PRIMARY KEY (`sk_purchasing`),
   UNIQUE KEY `uk_fact_purchasing_dd` (`po_id`, `po_detail_id`),
+  CONSTRAINT `chk_fact_qty_order` CHECK (`qty_order` > 0),
   KEY `idx_fact_sk_tanggal` (`sk_tanggal`),
   KEY `idx_fact_sk_karyawan` (`sk_karyawan`),
   KEY `idx_fact_sk_produk` (`sk_produk`),
