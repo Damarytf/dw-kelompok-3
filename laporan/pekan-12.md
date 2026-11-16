@@ -33,7 +33,7 @@ Status        : Hijau, Kuning, Merah
 
 
 
-## 5. Rencana pekan depan
+## 5. Rencana pekan depan (Isi masih template)
 
 | Target | Penanggung jawab |
 |---|---|
