@@ -90,3 +90,21 @@
 | `LineTotal` | DECIMAL(18,2) | Metric / Measure | `Purchasing.PurchaseOrderDetail` | `LineTotal` | Total harga per item line (`OrderQty * UnitPrice`). |
 | `TaxAmt` | DECIMAL(18,2) | Metric / Measure | `Purchasing.PurchaseOrderHeader` | `TaxAmt * (LineTotal / SubTotal)` | Pajak pembelian dihitung proporsional per item line. |
 | `Freight` | DECIMAL(18,2) | Metric / Measure | `Purchasing.PurchaseOrderHeader` | `Freight * (LineTotal / SubTotal)` | Biaya kirim pembelian dihitung proporsional per item line. |
+
+---
+
+## 6. Daftar Tabel Staging (Implementasi Fisik DW)
+
+Berikut adalah daftar 9 tabel *staging* (`stg_*`) pada database `dw_kelompok3` yang menampung hasil ekstraksi mentah dari database OLTP AdventureWorks sebelum ditransformasi ke tabel dimensi dan tabel fakta (`sql/ddl.sql`):
+
+| No | Nama Tabel Staging | Tabel Sumber (AdventureWorks) | Tabel Target (DW Fisik) | Fungsi / Keterangan |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | `stg_employee` | `HumanResources.Employee` | `dim_karyawan` | Menampung atribut kepegawaian (jabatan, jenis kelamin, tanggal rekrut) sebelum di-join dengan data person. |
+| 2 | `stg_person` | `Person.Person` | `dim_karyawan` | Menampung nama lengkap karyawan (`FirstName`, `MiddleName`, `LastName`) untuk digabung dengan `stg_employee`. |
+| 3 | `stg_product` | `Production.Product` | `dim_produk` | Menampung data master produk, kode produk, warna, dan harga jual standar. |
+| 4 | `stg_productsubcategory` | `Production.ProductSubcategory` | `dim_produk` | Menampung data referensi subkategori produk untuk melengkapi hierarki produk. |
+| 5 | `stg_productcategory` | `Production.ProductCategory` | `dim_produk` | Menampung data referensi kategori utama produk. |
+| 6 | `stg_productcosthistory` | `Production.ProductCostHistory` | `dim_produk` | Menampung riwayat biaya standar produk untuk pelacakan perubahan harga/SCD. |
+| 7 | `stg_vendor` | `Purchasing.Vendor` | `dim_vendor` | Menampung data pemasok/vendor, nomor akun, peringkat kredit, dan status aktif. |
+| 8 | `stg_purchaseorderheader` | `Purchasing.PurchaseOrderHeader` | `fact_purchasing` | Menampung data header transaksi pembelian (`PurchaseOrderID`, tanggal pesan, ID karyawan, ID vendor). |
+| 9 | `stg_purchaseorderdetail` | `Purchasing.PurchaseOrderDetail` | `fact_purchasing` | Menampung rincian baris item pembelian (`PurchaseOrderDetailID`, `ProductID`, `OrderQty`, `UnitPrice`, `LineTotal`). |
