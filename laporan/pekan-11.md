@@ -39,8 +39,8 @@ Status        : Hijau, Kuning, Merah
 
 | Target | Penanggung jawab |
 |---|---|
-| Pembuatan etl/t01_ekstrak.ktr & Salin tabel sumber ke staging (validasi jumlah baris). | Zuna |
-| Transformasi tiap dimensi (.ktr per dimensi, aturan NULL sesuai dokumen mapping | Zuna |
+| Pembuatan etl/t01_ekstrak.ktr & Salin tabel sumber ke staging (validasi jumlah baris). | Muhammad Zuna |
+| Transformasi tiap dimensi (.ktr per dimensi, aturan NULL sesuai dokumen mapping | Muhammad Zuna |
 | Desain & Implementasi SCD Tipe 2 (contoh dim_produk dari riwayat biaya dengan versi ganda) | Arya Kusuma Negara & Muhammad Zuna |
 | Transformasi fakta & Database lookup ke setiap dimensi dengan nilai default -1 | Muhammad Zuna |
 | Proses rekonsiliasi & analisis hasil query rekonsiliasi setelah job dijalankan dua kali berturut-turut. | Ibad |
