@@ -2,7 +2,7 @@
 
 * **Domain Bisnis:** Purchasing (Pengadaan Barang)
 * **Arsitektur Skema:** Star Schema v2
-* **Versi Skrip `dim_tanggal`:** Versi 1.0 (`dim_tanggal_mysql.sql` — Standar Dosen)
+* **Versi Skrip `dim_tanggal`:** Versi 1.0 (`dim_tanggal_mysql.sql` — Standar )
 * **Versi Skrip DDL Tim:** Versi 2.0 (`sql/ddl.sql`)
 
 ---
