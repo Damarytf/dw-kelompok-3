@@ -10,14 +10,14 @@ Status        : Hijau, Kuning, Merah
 
 | Target pekan ini | Status | Bukti (tautan file, commit, tangkapan layar) |
 |---|---|---|
-| Pemasangan dim_tanggal standar Versi 1.0 & penyimpanan hasil query pemeriksaan. | Hijau |[Gambar Star schema Ver 2](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/star_scheme_v2_.png) |
-| Penulisan skrip sql/ddl.sql (seluruh dimensi & fakta, baris -1, foreign key, index, dan idempotent / aman dijalankan 2x). | Hijau |[images/Database Sumber](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/Database%20Sumber.png) |
-| Pengujian constraint (menjalankan 3 uji & menyimpan tangkapan layar pesan error). | Hijau | [Mapping](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/mapping.md) |
-| Pembuatan Kamus Data di docs/kamus-data.md (seluruh tabel DW, penjelasan dim_tanggal, dan versi skrip). | Hijau | [Strategi SCD](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/strategi_scd.md) |
-|Pembuatan ERD reverse engineering dari database (via DBeaver) dan perbandingan dengan Star Schema v2. | Hijau | [Load Sequence](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/load_sequence.md) |
-| Penambahan daftar tabel staging ke dalam dokumen mapping. | Hijau | [Desain Cube](https://github.com/Damarytf/dw-kelompok-3/blob/main/docs/desain_cube_pembelian.md) |
-| Wireframe dashboard, semua pertanyaan bisnis terwakili | Kuning | [Dasbboard beserta pertanyaan-pertanyaan refrensi](https://github.com/Damarytf/dw-kelompok-3/blob/main/dashboard/db.jpg) |
-| Penyusunan laporan progres menggunakan templat laporan serta penyertaan change request (jika ada). | Hijau | [Gambar 1.  Konfigurasi dan Pengujian Preview Data pada Step Table Input (Extract Vendor)](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/Gambar%201.%20Konfigurasi%20dan%20Pengujian%20Preview%20Data%20pada%20Step%20Table%20Input%20(Extract%20Vendor).jpeg), [Gambar 2. Hasil Eksekusi (Run Execution Success) Transformation Extract Vendor Domain Purchasing)](https://github.com/Damarytf/dw-kelompok-3/blob/main/Images/Gambar%202.%20Hasil%20Eksekusi%20(Run%20Execution%20Success)%20Transformation%20Extract%20Vendor%20Domain%20Purchasing.jpeg) |
+| Pemasangan dim_tanggal standar Versi 1.0 & penyimpanan hasil query pemeriksaan. | Hijau |[Link Menyusul] |
+| Penulisan skrip sql/ddl.sql (seluruh dimensi & fakta, baris -1, foreign key, index, dan idempotent / aman dijalankan 2x). | Hijau |[Link Menyusul] |
+| Pengujian constraint (menjalankan 3 uji & menyimpan tangkapan layar pesan error). | Hijau | [Link Menyusul] |
+| Pembuatan Kamus Data di docs/kamus-data.md (seluruh tabel DW, penjelasan dim_tanggal, dan versi skrip). | Hijau | [Link Menyusul] |
+|Pembuatan ERD reverse engineering dari database (via DBeaver) dan perbandingan dengan Star Schema v2. | Hijau | [Link Menyusul] |
+| Penambahan daftar tabel staging ke dalam dokumen mapping. | Hijau | [Link Menyusul] |
+| Wireframe dashboard, semua pertanyaan bisnis terwakili | Kuning | [Link Menyusul] |
+| Penyusunan laporan progres menggunakan templat laporan serta penyertaan change request (jika ada). | Hijau | [Link Menyusul] |
 | Laporan laporan/pekan-11.md siap | Hijau | [Laporan Pekan 11)](https://github.com/Damarytf/dw-kelompok-3/blob/main/laporan/pekan-11.md) |
 
 ## 2. Kendala pengerjaan
