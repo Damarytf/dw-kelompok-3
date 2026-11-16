@@ -1,4 +1,4 @@
-# Laporan Progres Pekan [09 & 10]
+# Laporan Progres Pekan [09]
 
 Kelompok      : 3
 
