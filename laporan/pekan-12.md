@@ -15,7 +15,7 @@ Status        : Hijau, Kuning, Merah
 |Transformasi fakta & Database lookup ke setiap dimensi dengan nilai default -1. | Hijau | [Link Menyusul] |
 |Pembuatan etl/job_utama.kjb (ekstrak, kosongkan, dimensi, fakta) & eksekusi via Kitchen dari terminal. | Hijau | [Link Menyusul] |
 | Proses rekonsiliasi & analisis hasil query rekonsiliasi setelah job dijalankan dua kali berturut-turut. | Hijau | [etl_jobutama](https://github.com/Damarytf/dw-kelompok-3/blob/main/etl/job_utama.kjb) |
-|Penyusunan laporan Steering Review pekan 13, pengumpulan log Kitchen, dan hasil rekonsiliasi. | Kuning | [Link Menyusul] |
+|Penyusunan laporan Steering Review pekan 13, pengumpulan log Kitchen, dan hasil rekonsiliasi. | Kuning | [log_kitchen](https://github.com/Damarytf/dw-kelompok-3/blob/main/etl/log_kitchen_job_utama.log) |
 | Laporan laporan/pekan-12.md siap | Hijau | [Laporan Pekan 12)](https://github.com/Damarytf/dw-kelompok-3/blob/main/laporan/pekan-12.md) |
 
 ## 2. Kendala pengerjaan
