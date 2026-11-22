@@ -10,7 +10,7 @@ Status        : Hijau, Kuning, Merah
 | Target pekan ini | Status | Bukti (tautan file, commit, tangkapan layar) |
 |---|---|---|
 | Pembuatan etl/t01_ekstrak.ktr & Salin tabel sumber ke staging (validasi jumlah baris). | Hijau |[t01_ekstrak](https://github.com/Damarytf/dw-kelompok-3/blob/main/etl/t01_ekstrak.ktr) |
-| Transformasi tiap dimensi (.ktr per dimensi, aturan NULL sesuai dokumen mapping). | Hijau |[Link Menyusul] |
+| Transformasi tiap dimensi (.ktr per dimensi, aturan NULL sesuai dokumen mapping). | Hijau |[dim_karyawan](https://github.com/Damarytf/dw-kelompok-3/blob/main/etl/t02_dim_karyawan.ktr), [dim_Produk](https://github.com/Damarytf/dw-kelompok-3/blob/main/etl/t02_dim_produk.ktr), [dim_vendor](https://github.com/Damarytf/dw-kelompok-3/blob/main/etl/t02_dim_vendor.ktr), [fact_purchasing](https://github.com/Damarytf/dw-kelompok-3/blob/main/etl/t03_fact_purchasing.ktr) |
 |Desain & Implementasi SCD Tipe 2 (contoh dim_produk dari riwayat biaya dengan versi ganda). | Hijau | [Link Menyusul] |
 |Transformasi fakta & Database lookup ke setiap dimensi dengan nilai default -1. | Hijau | [Link Menyusul] |
 |Pembuatan etl/job_utama.kjb (ekstrak, kosongkan, dimensi, fakta) & eksekusi via Kitchen dari terminal. | Hijau | [Link Menyusul] |
