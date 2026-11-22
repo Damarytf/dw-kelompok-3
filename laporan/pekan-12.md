@@ -9,7 +9,7 @@ Status        : Hijau, Kuning, Merah
 ## 1. Target dan capaian
 | Target pekan ini | Status | Bukti (tautan file, commit, tangkapan layar) |
 |---|---|---|
-| Pembuatan etl/t01_ekstrak.ktr & Salin tabel sumber ke staging (validasi jumlah baris). | Hijau |[Link Menyusul] |
+| Pembuatan etl/t01_ekstrak.ktr & Salin tabel sumber ke staging (validasi jumlah baris). | Hijau |[t01_ekstrak](https://github.com/Damarytf/dw-kelompok-3/blob/main/etl/t01_ekstrak.ktr) |
 | Transformasi tiap dimensi (.ktr per dimensi, aturan NULL sesuai dokumen mapping). | Hijau |[Link Menyusul] |
 |Desain & Implementasi SCD Tipe 2 (contoh dim_produk dari riwayat biaya dengan versi ganda). | Hijau | [Link Menyusul] |
 |Transformasi fakta & Database lookup ke setiap dimensi dengan nilai default -1. | Hijau | [Link Menyusul] |
