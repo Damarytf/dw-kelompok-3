@@ -10,6 +10,122 @@ CREATE DATABASE IF NOT EXISTS `dw_kelompok3`
 USE `dw_kelompok3`;
 
 SET FOREIGN_KEY_CHECKS = 0;
+SET @OLD_SQL_MODE = @@SQL_MODE, SQL_MODE = CONCAT(@@SQL_MODE, ',NO_AUTO_VALUE_ON_ZERO');
+
+-- ============================================================================
+-- BAGIAN A: TABEL STAGING (14 Tabel Staging Sumber OLTP AdventureWorks)
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS `stg_employee` (
+  `BusinessEntityID` INT DEFAULT NULL,
+  `NationalIDNumber` VARCHAR(15) DEFAULT NULL,
+  `JobTitle` VARCHAR(50) DEFAULT NULL,
+  `Gender` VARCHAR(1) DEFAULT NULL,
+  `HireDate` DATE DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_person` (
+  `BusinessEntityID` INT DEFAULT NULL,
+  `FirstName` VARCHAR(50) DEFAULT NULL,
+  `MiddleName` VARCHAR(50) DEFAULT NULL,
+  `LastName` VARCHAR(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_product` (
+  `ProductID` INT DEFAULT NULL,
+  `Name` VARCHAR(100) DEFAULT NULL,
+  `ProductNumber` VARCHAR(25) DEFAULT NULL,
+  `Color` VARCHAR(15) DEFAULT NULL,
+  `StandardCost` DECIMAL(19,4) DEFAULT NULL,
+  `ListPrice` DECIMAL(19,4) DEFAULT NULL,
+  `ProductSubcategoryID` INT DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_productsubcategory` (
+  `ProductSubcategoryID` INT DEFAULT NULL,
+  `ProductCategoryID` INT DEFAULT NULL,
+  `Name` VARCHAR(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_productcategory` (
+  `ProductCategoryID` INT DEFAULT NULL,
+  `Name` VARCHAR(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_productcosthistory` (
+  `ProductID` INT DEFAULT NULL,
+  `StartDate` DATETIME DEFAULT NULL,
+  `EndDate` DATETIME DEFAULT NULL,
+  `StandardCost` DECIMAL(19,4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_vendor` (
+  `BusinessEntityID` INT DEFAULT NULL,
+  `AccountNumber` VARCHAR(15) DEFAULT NULL,
+  `Name` VARCHAR(50) DEFAULT NULL,
+  `CreditRating` TINYINT DEFAULT NULL,
+  `ActiveFlag` TINYINT(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_shipmethod` (
+  `ShipMethodID` INT DEFAULT NULL,
+  `Name` VARCHAR(50) DEFAULT NULL,
+  `ShipBase` DECIMAL(19,4) DEFAULT NULL,
+  `ShipRate` DECIMAL(19,4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_address` (
+  `AddressID` INT DEFAULT NULL,
+  `City` VARCHAR(50) DEFAULT NULL,
+  `StateProvinceID` INT DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_stateprovince` (
+  `StateProvinceID` INT DEFAULT NULL,
+  `StateProvinceCode` VARCHAR(10) DEFAULT NULL,
+  `CountryRegionCode` VARCHAR(10) DEFAULT NULL,
+  `Name` VARCHAR(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_countryregion` (
+  `CountryRegionCode` VARCHAR(10) DEFAULT NULL,
+  `Name` VARCHAR(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_businessentityaddress` (
+  `BusinessEntityID` INT DEFAULT NULL,
+  `AddressID` INT DEFAULT NULL,
+  `AddressTypeID` INT DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_purchaseorderheader` (
+  `PurchaseOrderID` INT DEFAULT NULL,
+  `EmployeeID` INT DEFAULT NULL,
+  `VendorID` INT DEFAULT NULL,
+  `ShipMethodID` INT DEFAULT NULL,
+  `OrderDate` DATETIME DEFAULT NULL,
+  `ShipDate` DATETIME DEFAULT NULL,
+  `SubTotal` DECIMAL(19,4) DEFAULT NULL,
+  `TaxAmt` DECIMAL(19,4) DEFAULT NULL,
+  `Freight` DECIMAL(19,4) DEFAULT NULL,
+  `TotalDue` DECIMAL(19,4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `stg_purchaseorderdetail` (
+  `PurchaseOrderID` INT DEFAULT NULL,
+  `PurchaseOrderDetailID` INT DEFAULT NULL,
+  `ProductID` INT DEFAULT NULL,
+  `OrderQty` SMALLINT DEFAULT NULL,
+  `UnitPrice` DECIMAL(19,4) DEFAULT NULL,
+  `LineTotal` DECIMAL(19,4) DEFAULT NULL,
+  `ReceivedQty` DECIMAL(8,2) DEFAULT NULL,
+  `RejectedQty` DECIMAL(8,2) DEFAULT NULL,
+  `StockedQty` DECIMAL(9,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- ============================================================================
+-- BAGIAN B: RESET & PEMBUATAN TABEL DIMENSI DAN FAKTA (STAR SCHEMA V2)
+-- ============================================================================
 
 DROP TABLE IF EXISTS `fact_purchasing`;
 DROP TABLE IF EXISTS `dim_tanggal`;
@@ -119,7 +235,7 @@ INSERT INTO `dim_vendor` (
 );
 
 -- ============================================================================
--- 5. TABEL DIMENSI GEOGRAFI (dim_geography) - Tambahan Star Schema V2
+-- 5. TABEL DIMENSI GEOGRAFI (dim_geography) - Star Schema V2
 -- ============================================================================
 CREATE TABLE `dim_geography` (
   `sk_geography` INT NOT NULL AUTO_INCREMENT,
@@ -143,7 +259,7 @@ INSERT INTO `dim_geography` (
 );
 
 -- ============================================================================
--- 6. TABEL DIMENSI METODE PENGIRIMAN (dim_ship_method) - Tambahan Star Schema V2
+-- 6. TABEL DIMENSI METODE PENGIRIMAN (dim_ship_method) - Star Schema V2
 -- ============================================================================
 CREATE TABLE `dim_ship_method` (
   `sk_ship_method` INT NOT NULL AUTO_INCREMENT,
@@ -216,4 +332,5 @@ CREATE TABLE `fact_purchasing` (
     ON UPDATE CASCADE ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+SET SQL_MODE = @OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS = 1;
