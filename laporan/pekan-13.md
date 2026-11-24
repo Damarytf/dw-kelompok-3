@@ -9,14 +9,14 @@ Status        : Hijau, Kuning, Merah
 ## 1. Target dan capaian
 | Target pekan ini | Status | Bukti (tautan file, commit, tangkapan layar) |
 |---|---|---|
-| Pembuatan etl/t01_ekstrak.ktr & Salin tabel sumber ke staging (validasi jumlah baris). | Hijau | |
-| Transformasi tiap dimensi (.ktr per dimensi, aturan NULL sesuai dokumen mapping). | Hijau |  |
-|Desain & Implementasi SCD Tipe 2 (contoh dim_produk dari riwayat biaya dengan versi ganda). | Hijau |  |
-|Transformasi fakta & Database lookup ke setiap dimensi dengan nilai default -1. | Hijau | |
-|Pembuatan etl/job_utama.kjb (ekstrak, kosongkan, dimensi, fakta) & eksekusi via Kitchen dari terminal. | Hijau |  |
-| Proses rekonsiliasi & analisis hasil query rekonsiliasi setelah job dijalankan dua kali berturut-turut. | Hijau | [|
-|Penyusunan laporan Steering Review pekan 13, pengumpulan log Kitchen, dan hasil rekonsiliasi. | Kuning | |
-| Laporan laporan/pekan-12.md siap | Hijau |  |
+| Pembuatan etl/t01_ekstrak.ktr & Salin tabel sumber ke staging (validasi jumlah baris). | Hijau | Menyusul |
+| Transformasi tiap dimensi (.ktr per dimensi, aturan NULL sesuai dokumen mapping). | Hijau | Menyusul |
+|Desain & Implementasi SCD Tipe 2 (contoh dim_produk dari riwayat biaya dengan versi ganda). | Hijau | Menyusul |
+|Transformasi fakta & Database lookup ke setiap dimensi dengan nilai default -1. | Hijau | Menyusul |
+|Pembuatan etl/job_utama.kjb (ekstrak, kosongkan, dimensi, fakta) & eksekusi via Kitchen dari terminal. | Hijau | Menyusul  |
+| Proses rekonsiliasi & analisis hasil query rekonsiliasi setelah job dijalankan dua kali berturut-turut. | Hijau | Menyusul |
+|Penyusunan laporan Steering Review pekan 13, pengumpulan log Kitchen, dan hasil rekonsiliasi. | Kuning | Menyusul |
+| Laporan laporan/pekan-12.md siap | Hijau | Menyusul |
 
 ## 2. Kendala pengerjaan
 
