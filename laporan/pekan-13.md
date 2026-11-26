@@ -9,14 +9,13 @@ Status        : Hijau, Kuning, Merah
 ## 1. Target dan capaian
 | Target pekan ini | Status | Bukti (tautan file, commit, tangkapan layar) |
 |---|---|---|
-| Pembuatan etl/t01_ekstrak.ktr & Salin tabel sumber ke staging (validasi jumlah baris). | Hijau | Menyusul |
-| Transformasi tiap dimensi (.ktr per dimensi, aturan NULL sesuai dokumen mapping). | Hijau | Menyusul |
-|Desain & Implementasi SCD Tipe 2 (contoh dim_produk dari riwayat biaya dengan versi ganda). | Hijau | Menyusul |
-|Transformasi fakta & Database lookup ke setiap dimensi dengan nilai default -1. | Hijau | Menyusul |
-|Pembuatan etl/job_utama.kjb (ekstrak, kosongkan, dimensi, fakta) & eksekusi via Kitchen dari terminal. | Hijau | Menyusul  |
+| Penyusunan olap/schema.xml sesuai desain cube pekan 10; memastikan tidak ada elemen merah di Schema Workbench. | Hijau | Menyusul |
+| Konfigurasi Dimensi Waktu melalui DimensionUsage di tingkat Schema (bukan di dalam cube) & urutan bulan yang benar. | Hijau | Menyusul |
+|Pembuatan minimal satu calculated member (misalnya margin persen atau harga rata-rata). | Hijau | Menyusul |
+|Penulisan minimal 5 query MDX di olap/query.mdx, masing-masing diberi nomor pertanyaan bisnis yang dijawab. | Hijau | Menyusul |
+|Pembuktian kesesuaian MDX dan SQL: tangkapan layar hasil MDX + SQL pembanding untuk tiap query, serta penjelasan selisih jika ada. | Hijau | Menyusul  |
 | Proses rekonsiliasi & analisis hasil query rekonsiliasi setelah job dijalankan dua kali berturut-turut. | Hijau | Menyusul |
-|Penyusunan laporan Steering Review pekan 13, pengumpulan log Kitchen, dan hasil rekonsiliasi. | Kuning | Menyusul |
-| Laporan laporan/pekan-12.md siap | Hijau | Menyusul |
+|Penyusunan laporan laporan/pekan-14.md untuk Steering Review pekan 14, termasuk pertanyaan bisnis yang belum bisa dijawab cube (jika ada). | Kuning | Menyusul |
 
 ## 2. Kendala pengerjaan
 
